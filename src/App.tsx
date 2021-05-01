@@ -1,26 +1,43 @@
 import React, {useEffect, useState} from 'react';
 import ProjectCard from "./ProjectCard";
+import MainNavBar from "./MainNavBar";
 
-const getProjects = async () => {
+interface Project {
+    name: string;
+    updated_at: string;
+    [key: string]: any;
+}
+
+const getProjects = async (): Promise<Project[]> => {
     const response = await fetch("https://api.github.com/users/mixelburg/repos")
     return  await response.json()
 }
 
-function App() {
+
+const App: React.FC = () => {
     const addr = "https://st2.depositphotos.com/7600296/10994/v/950/depositphotos_109949504-stock-illustration-avatar-girl-icon-business-lady.jpg"
 
-    const [projects, setProjects] = useState([])
+    const [projects, setProjects]: [Project[], any] = useState([])
+
+
 
     useEffect(() => {
         getProjects().then(data => {
-            // @ts-ignore
-            data.sort((a, b) => new Date(a["updated_at"]) - new Date(b["updated_at"]))
+            data.sort((a, b) => {
+                const d1: any = new Date(a["updated_at"])
+                const d2: any = new Date(b["updated_at"])
+                return d1 - d2;
+            })
             setProjects(data.reverse().slice(0, 6))
         })
     }, [])
 
+
     return (
         <div>
+
+            <MainNavBar/>
+
             <div className="row">
                 <div className="col">
                     <div className="card m-5" style={{width: "28rem"}}>

@@ -1,7 +1,15 @@
 import React from "react";
 
-// @ts-ignore
-const ProjectCard = (props) => {
+interface PropsData {
+    name: string;
+    [key: string]: any;
+}
+
+interface Props {
+    data: PropsData;
+}
+
+const ProjectCard: React.FC<Props> = (props) => {
     return (
         <div className="col">
             <div className="card">
