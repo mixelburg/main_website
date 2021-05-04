@@ -1,6 +1,6 @@
 import React from "react";
 import {Instagram, Envelope, Whatsapp} from "react-bootstrap-icons";
-
+import "./logo.css"
 
 const openGmail = () => {
     let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=contact@mixelburg.com&su=question&body=&ui=2&tf=1&pli=1';
@@ -28,9 +28,10 @@ const MainNavBar: React.FC = () => {
 
     return (
         <>
-            <div className="d-flex flex-row justify-content-between text-white">
+            <div className="d-flex flex-row flex-wrap justify-content-between text-white">
 
-                <pre className="text-white h3">
+
+                <pre className="responsive-text">
                     {logo}
                 </pre>
                 <div className="d-flex flex-row">

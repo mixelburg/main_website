@@ -2,15 +2,12 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import ProjectGrid from "../Projects/ProjectGrid";
 
-interface Props {
 
-}
-
-const MainBody: React.FC<Props> = (props) => {
+const MainBody: React.FC = () => {
 
     return (
-        <div className="bg-danger px-5">
-            <div className="row">
+        <div className="p-5">
+            <div className="row row-cols-1 row-cols-md-2 g-4">
                 <div className="col">
                     <InfoCard/>
                 </div>

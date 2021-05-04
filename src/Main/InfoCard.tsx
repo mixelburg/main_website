@@ -5,17 +5,17 @@ const InfoCard: React.FC = () => {
 
 
     return (
-        <>
-            <div className="card" style={{width: "28rem"}}>
+        <div className="card" style={{width: ""}}>
 
-                <img src={Avatar}  className="card-img-top rounded-circle" alt="..."/>
-
-
-                <div className="card-body">
-                    Genius, Billionaire, Playboy, Philanthropist
-                </div>
+            <div className="d-flex flex-row">
+                <img style={{width: "30%"}} className="rounded-circle" src={Avatar}  alt="..."/>
+                <div>some text</div>
             </div>
-        </>
+
+            <div className="card-body">
+                Genius, Billionaire, Playboy, Philanthropist
+            </div>
+        </div>
     )
 
 }

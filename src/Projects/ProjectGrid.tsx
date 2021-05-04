@@ -1,22 +1,13 @@
 import React, {useEffect, useState} from "react";
 import ProjectCard from "./ProjectCard";
-
-interface Project {
-    name: string;
-    updated_at: string;
-    [key: string]: any;
-}
-
-interface Props {
-
-}
+import {Project} from "./IProject";
 
 const getProjects = async (): Promise<Project[]> => {
     const response = await fetch("https://api.github.com/users/mixelburg/repos")
     return  await response.json()
 }
 
-const ProjectGrid: React.FC<Props> = (props) => {
+const ProjectGrid: React.FC = () => {
     const [projects, setProjects]: [Project[], any] = useState([])
 
     useEffect(() => {
@@ -33,8 +24,8 @@ const ProjectGrid: React.FC<Props> = (props) => {
 
     return (
         <>
-            <div className="row row-cols-1 row-cols-md-2 g-4 p-5">
-                {projects.map(project => <ProjectCard data={project}/>)}
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+                {projects.map(project => <ProjectCard data={project} key={project.id}/>)}
             </div>
         </>
     )
