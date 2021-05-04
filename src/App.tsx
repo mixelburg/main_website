@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import ProjectCard from "./ProjectCard";
 import MainNavBar from "./MainNavBar";
+import MainBody from "./MainBody";
 
 interface Project {
     name: string;
@@ -13,13 +13,8 @@ const getProjects = async (): Promise<Project[]> => {
     return  await response.json()
 }
 
-
 const App: React.FC = () => {
-    const addr = "https://st2.depositphotos.com/7600296/10994/v/950/depositphotos_109949504-stock-illustration-avatar-girl-icon-business-lady.jpg"
-
     const [projects, setProjects]: [Project[], any] = useState([])
-
-
 
     useEffect(() => {
         getProjects().then(data => {
@@ -32,31 +27,12 @@ const App: React.FC = () => {
         })
     }, [])
 
-
     return (
         <div>
 
             <MainNavBar/>
 
-            <div className="row">
-                <div className="col">
-                    <div className="card m-5" style={{width: "28rem"}}>
-
-                        <img src={addr} className="card-img-top rounded-circle" alt="..."/>
-
-                        <div className="card-body">
-                            some body
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col">
-
-                    <div className="row row-cols-1 row-cols-md-2 g-4 p-5">
-                        {projects.map(project => <ProjectCard data={project}/>)}
-                    </div>
-                </div>
-            </div>
+            <MainBody data={projects}/>
         </div>
     );
 }

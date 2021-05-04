@@ -1,12 +1,13 @@
 import React from "react";
 
-interface PropsData {
+interface Project {
     name: string;
+    updated_at: string;
     [key: string]: any;
 }
 
 interface Props {
-    data: PropsData;
+    data: Project;
 }
 
 const ProjectCard: React.FC<Props> = (props) => {
