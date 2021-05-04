@@ -24,6 +24,7 @@ const MainNavBar: React.FC = () => {
         rel: "noreferrer",
         className: "link text-white"
     }
+    const svgSize = 70
 
     return (
         <>
@@ -33,12 +34,12 @@ const MainNavBar: React.FC = () => {
                     {logo}
                 </pre>
                 <div className="d-flex flex-row">
-                    <Envelope size={100} className="mt-5 me-3" onClick={openGmail}/>
+                    <Envelope size={svgSize} className="mt-5 me-3" onClick={openGmail}/>
                     <a href="https://www.instagram.com/an0nym0us_rac00n/" {...linkSettings}>
-                        <Instagram size={100} className="mt-5 me-3"/>
+                        <Instagram size={svgSize} className="mt-5 me-3"/>
                     </a>
                     <a href="https://wa.me/972559365878?text=Hi" {...linkSettings}>
-                        <Whatsapp size={100} className="mt-5 me-3"/>
+                        <Whatsapp size={svgSize} className="mt-5 me-3"/>
                     </a>
                 </div>
 
