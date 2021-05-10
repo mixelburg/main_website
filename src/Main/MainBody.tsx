@@ -8,9 +8,13 @@ const MainBody: React.FC = () => {
     return (
         <div>
 
-                <MainInfo/>
+            <MainInfo/>
 
-                <ProjectGrid/>
+            <ProjectGrid/>
+
+            <div style={{height: "40rem"}}>
+
+            </div>
         </div>
     )
 }

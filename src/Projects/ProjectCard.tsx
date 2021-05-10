@@ -1,26 +1,33 @@
 import React from "react";
-import {Project} from "./IProject";
+import ProjectCardModal from "./ProjectCardModal";
 
 interface Props {
-    data: Project;
-}
-
-const openProject = (html_url: string) => {
-    window.open(html_url);
+    title: string;
+    short_desc: string;
 }
 
 const ProjectCard: React.FC<Props> = (props) => {
-    console.log(props)
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    // modal controls
+    const showModal = () => {
+        setIsOpen(true);
+    };
+
+    const hideModal = () => {
+        setIsOpen(false);
+    };
 
     return (
         <div className="col">
-            <div className="card stretched-link" role="button" onClick={() => openProject(props.data.html_url)} >
-                <div className="card-body">
-                    <h5 className="card-title">{props["data"]["name"]}</h5>
-                    <p className="card-text">This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
+            <article className="card" style={{}} onClick={showModal}>
+                <img src="https://gauracs.me/wp-content/uploads/2020/08/pc-4.png" className="card-img-top" alt="..."/>
+                    <div className="card-body p-1">
+                        <div className="card-title h4 mb-1">{props.title}</div>
+                        <div className="card-text h5">{props.short_desc}</div>
+                    </div>
+            </article>
+            <ProjectCardModal data={null} isOpen={isOpen} hideModal={hideModal}/>
         </div>
     )
 }
