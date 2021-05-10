@@ -7,9 +7,10 @@ const MainBody: React.FC = () => {
 
     return (
         <div>
-            <MainInfo/>
 
-            <ProjectGrid/>
+                <MainInfo/>
+
+                <ProjectGrid/>
         </div>
     )
 }

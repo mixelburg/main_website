@@ -5,8 +5,8 @@ const MainInfo: React.FC = () => {
 
 
     return (
-        <div className="d-flex flex-row justify-content-center">
-            <div className="d-flex flex-row bg-info" style={{width: "50%"}}>
+        <div className="d-flex flex-column">
+            <div className="d-flex flex-row bg-info align-self-center" style={{width: "50%"}}>
 
                 <img style={{width: "30%"}} className="rounded-circle p-2" src={Avatar}  alt="..."/>
 

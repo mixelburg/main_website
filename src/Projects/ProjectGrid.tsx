@@ -23,11 +23,17 @@ const ProjectGrid: React.FC = () => {
 
 
     return (
-        <>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
-                {projects.map(project => <ProjectCard data={project} key={project.id}/>)}
+        <div className="d-flex flex-column bg-danger">
+            <div className="align-self-center" style={{width: "50%"}}>
+
+                <div className="text-white h2">
+                    Projects.
+                </div>
+                <div className="row row-cols-1 row-cols-md-2 g-4">
+                    {projects.map(project => <ProjectCard data={project} key={project.id}/>)}
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
