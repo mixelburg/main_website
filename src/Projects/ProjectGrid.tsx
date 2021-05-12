@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 import IProject from "./IProject"
 
 const getProjects = async (): Promise<IProject[] | null> => {
-    const res = await fetch("http://localhost:5000/projects")
+    const res = await fetch("http://mixelburg.com:5000/projects")
     console.log(res.status)
     if (!res.ok) return null;
 
