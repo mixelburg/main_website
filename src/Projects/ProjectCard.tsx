@@ -3,6 +3,7 @@ import ProjectCardModal from "./ProjectCardModal";
 import IProject from "./IProject";
 
 
+
 const ProjectCard: React.FC<IProject> = (props) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
