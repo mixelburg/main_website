@@ -1,0 +1,21 @@
+.responsive-text {
+    color: red;
+}
+
+@media screen and (max-width: 400px) {
+    .responsive-text{
+        font-size: 50%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .responsive-text{
+        font-size: 100%;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .responsive-text{
+        font-size: 120%;
+    }
+}

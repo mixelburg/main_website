@@ -1,12 +1,17 @@
 import React from 'react';
+import MainNavBar from "./Main/MainNavBar";
+import MainBody from "./Main/MainBody";
 
-function App() {
-  return (
-    <div>
-      hello world
+const App: React.FC = () => {
 
-    </div>
-  );
+
+    return (
+        <>
+            <MainNavBar/>
+
+            <MainBody/>
+        </>
+    );
 }
 
 export default App;
