@@ -4,6 +4,7 @@ import IProject from "./IProject"
 
 const getProjects = async (): Promise<IProject[] | null> => {
     const res = await fetch("http://localhost:5000/projects")
+    console.log(res.status)
     if (!res.ok) return null;
 
     return await res.json()
@@ -19,7 +20,6 @@ const ProjectGrid: React.FC = () => {
     }, [])
 
 
-    console.log(projects)
     return (
         <div className="d-flex flex-column bg-danger mt-5">
             <div className="align-self-center" style={{width: "50%"}}>
