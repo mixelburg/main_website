@@ -18,7 +18,7 @@ const ProjectCard: React.FC<IProject> = (props) => {
     return (
         <div className="col">
             <article className="card" style={{cursor: "pointer"}} onClick={showModal}>
-                <img src="https://gauracs.me/wp-content/uploads/2020/08/pc-4.png" className="card-img-top" alt="..."/>
+                <img src={props.showcase_photo} className="card-img-top" alt="..."/>
                     <div className="card-body p-1">
                         <div className="card-title h4 mb-1">{props.title}</div>
                         <div className="card-text h5">{props.short_desc}</div>
