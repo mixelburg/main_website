@@ -1,8 +1,9 @@
 import React from "react";
 import {Modal} from "react-bootstrap";
+import IProject from "./IProject";
 
 interface Props {
-    data: any;
+    data: IProject;
     isOpen: boolean;
     hideModal: () => void;
 }

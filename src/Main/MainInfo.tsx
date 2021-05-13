@@ -8,7 +8,7 @@ const MainInfo: React.FC = () => {
         <div className="d-flex flex-column">
             <div className="d-flex flex-row bg-info align-self-center" style={{width: "50%"}}>
 
-                <img style={{width: "30%"}} className="rounded-circle p-2" src={Avatar}  alt="..."/>
+                <img style={{width: "30%", height: "30%"}} className="rounded-circle p-2" src={Avatar}  alt="..."/>
 
                 <div>
                     <pre className="text-white h3">
