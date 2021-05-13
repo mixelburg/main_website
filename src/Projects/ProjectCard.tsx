@@ -6,6 +6,8 @@ interface Props {
     short_desc: string;
 }
 
+
+
 const ProjectCard: React.FC<Props> = (props) => {
     const [isOpen, setIsOpen] = React.useState(false);
 

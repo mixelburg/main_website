@@ -12,7 +12,6 @@ const ProjectCardModal: React.FC<Props> = (props) => {
     return (
         <Modal show={props.isOpen} onHide={props.hideModal} size="lg" centered>
 
-
         </Modal>
     )
 }
