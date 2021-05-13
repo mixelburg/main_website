@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar from "./../static/avatar.jpg"
+import Avatar from "../static/ava.jpg"
 
 const MainInfo: React.FC = () => {
 
