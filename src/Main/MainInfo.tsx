@@ -6,9 +6,9 @@ const MainInfo: React.FC = () => {
 
     return (
         <div className="d-flex flex-column">
-            <div className="d-flex flex-row bg-info align-self-center" style={{width: "50%"}}>
+            <div className="d-flex flex-row  align-self-center" style={{width: "50%"}}>
 
-                <img style={{width: "30%", height: "30%"}} className="rounded-circle p-2" src={Avatar}  alt="..."/>
+                <img style={{width: "30%", height: "30%"}} className="rounded-circle position-relative p-2" src={Avatar}  alt="..."/>
 
                 <div>
                     <pre className="text-white h3">

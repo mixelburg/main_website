@@ -7,6 +7,8 @@ import IProject from "./IProject";
 const ProjectCard: React.FC<IProject> = (props) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
+    const photo_url = `https://mixelburg.com:5000/projects/${props._id}/photos/`
+
     // modal controls
     const showModal = () => {
         setIsOpen(true);
@@ -19,7 +21,7 @@ const ProjectCard: React.FC<IProject> = (props) => {
     return (
         <div className="col">
             <article className="card" style={{cursor: "pointer"}} onClick={showModal}>
-                <img src={props.showcase_photo} className="card-img-top" alt="..."/>
+                <img src={photo_url + props.showcase_photo} className="card-img-top" alt="..."/>
                     <div className="card-body p-1">
                         <div className="card-title h4 mb-1">{props.title}</div>
                         <div className="card-text h5">{props.short_desc}</div>
