@@ -6,15 +6,12 @@ import ProjectGrid from "../Projects/ProjectGrid";
 const MainBody: React.FC = () => {
 
     return (
-        <div>
+        <div className="my-5">
 
             <MainInfo/>
 
             <ProjectGrid/>
 
-            <div style={{height: "40rem"}}>
-
-            </div>
         </div>
     )
 }
