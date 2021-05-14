@@ -5,7 +5,7 @@ const Background: React.FC = () => {
     const numStars = 20;
     const stars = []
     for (let i = 0; i < numStars; i++) {
-        stars.push(<div className="star"/>)
+        stars.push(<div className="star" key={i}/>)
     }
 
     return (

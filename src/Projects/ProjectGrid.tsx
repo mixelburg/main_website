@@ -4,7 +4,6 @@ import IProject from "./IProject"
 
 const getProjects = async (): Promise<IProject[] | null> => {
     const res = await fetch("https://mixelburg.com:5000/projects")
-    console.log(res.status)
     if (!res.ok) return null;
 
     return await res.json()
