@@ -6,7 +6,7 @@ import ProjectGrid from "../Projects/ProjectGrid";
 const MainBody: React.FC = () => {
 
     return (
-        <div className="my-5">
+        <div className="my-3">
 
             <MainInfo/>
 

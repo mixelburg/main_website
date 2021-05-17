@@ -20,7 +20,7 @@ const ProjectGrid: React.FC = () => {
 
 
     return (
-        <div className="d-flex flex-column mt-5">
+        <div className="d-flex flex-column mt-3">
             <div className="align-self-center" style={{width: "50%"}}>
 
                 <div className="text-white h2">
