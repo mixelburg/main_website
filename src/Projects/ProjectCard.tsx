@@ -27,7 +27,7 @@ const ProjectCard: React.FC<IProject> = (props) => {
                         <div className="card-text h5">{props.short_desc}</div>
                     </div>
             </article>
-            <ProjectCardModal data={props} isOpen={isOpen} hideModal={hideModal}/>
+            <ProjectCardModal data={props} isOpen={isOpen} hideModal={hideModal} photo_url={photo_url}/>
         </div>
     )
 }

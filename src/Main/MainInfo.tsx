@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar from "../static/ava.jpg"
+import Avatar from "../static/ava.png"
 import useWindowSize from "./useWindowSize";
 import "./MainInfo.css"
 
