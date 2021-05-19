@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "../static/ava.png"
-import useWindowSize from "./useWindowSize";
+import useWindowSize from "../util/useWindowSize";
 import "./MainInfo.css"
 
 const MainInfo: React.FC = () => {

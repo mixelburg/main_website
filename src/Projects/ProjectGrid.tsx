@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import ProjectCard from "./ProjectCard";
 import IProject from "./IProject"
 import "../static/index.css"
-import useWindowSize from "../Main/useWindowSize";
-import TextHR from "./TextHR";
+import useWindowSize from "../util/useWindowSize";
+import TextHR from "../util/TextHR";
 
 const getProjects = async (): Promise<IProject[] | null> => {
     const res = await fetch("https://mixelburg.com:5000/projects")

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import AboutMeCard from "./AboutMeCard";
 import IAboutMe from "./IAboutMe";
-import useWindowSize from "../Main/useWindowSize";
-import TextHR from "../Projects/TextHR";
+import useWindowSize from "../util/useWindowSize";
+import TextHR from "../util/TextHR";
 
 interface IAboutMeInfo {
     experience: [IAboutMe],

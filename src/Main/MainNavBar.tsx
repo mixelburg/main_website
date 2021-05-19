@@ -1,6 +1,6 @@
 import React from "react";
 import {Instagram, Envelope, Whatsapp} from "react-bootstrap-icons";
-import useWindowSize from "./useWindowSize";
+import useWindowSize from "../util/useWindowSize";
 
 const openGmail = () => {
     let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=contact@mixelburg.com&su=question&body=&ui=2&tf=1&pli=1';
