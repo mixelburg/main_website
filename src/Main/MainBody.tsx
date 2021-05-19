@@ -1,6 +1,7 @@
 import React from "react";
 import MainInfo from "./MainInfo";
 import ProjectGrid from "../Projects/ProjectGrid";
+import AboutMe from "../About/AboutMe";
 
 
 const MainBody: React.FC = () => {
@@ -11,6 +12,8 @@ const MainBody: React.FC = () => {
             <MainInfo/>
 
             <ProjectGrid/>
+
+            <AboutMe/>
 
         </div>
     )

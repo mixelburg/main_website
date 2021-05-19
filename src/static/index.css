@@ -1,0 +1,9 @@
+.blink_me {
+    animation: blinker 0.7s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
