@@ -25,16 +25,15 @@ const linkSettings = {
 }
 
 const MainNavBar: React.FC = () => {
-
-    const size = useWindowSize()
-
-    const svgSize = size.width * 0.04
+    const windowSize = useWindowSize()
+    const svgSize = windowSize.width > 600 ? windowSize.width * 0.04 : windowSize.width * 0.08
+    const logoSize = windowSize.width > 600 ? windowSize.width * 0.012 : windowSize.width * 0.02
 
     return (
         <>
             <div className="d-flex flex-row flex-wrap justify-content-between text-white">
 
-                <pre className="" style={{fontSize: size.width * 0.012}}>
+                <pre className="" style={{fontSize: logoSize}}>
                     {logo}
                 </pre>
                 <div className="d-flex flex-row">
@@ -48,7 +47,7 @@ const MainNavBar: React.FC = () => {
                 </div>
             </div>
 
-            <hr className="text-white my-0" style={{height: "5px", width: size.width}}/>
+            <hr className="text-white my-0" style={{height: "5px", width: windowSize.width}}/>
         </>
     )
 }

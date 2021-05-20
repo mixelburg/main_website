@@ -4,10 +4,9 @@ import useWindowSize from "../util/useWindowSize";
 import "./MainInfo.css"
 
 const MainInfo: React.FC = () => {
-    const size = useWindowSize()
-
-    const mainFontSize = size.width*0.032
-    const secFontSize = size.width*0.017
+    const windowSize = useWindowSize()
+    const secSize = windowSize.width > 600 ? "300%" : "200%"
+    const mainSize = windowSize.width > 600 ? "440%" : "280%"
 
     return (
         <div className="d-flex flex-column">
@@ -15,14 +14,9 @@ const MainInfo: React.FC = () => {
 
                 <img style={{width: "30%", height: "30%"}} className="rounded-circle position-relative p-2" src={Avatar}  alt="..."/>
 
-                <div>
-                    <pre className="text-white main-text" style={{fontSize: mainFontSize}}>
-                        My name is Ivan Krokha <br/>
-                        aka Mixelburg
-                    </pre>
-                    <div className="text-white" style={{fontSize: secFontSize}}>
-                        Genius, Billionaire, Playboy, Philanthropist
-                    </div>
+                <div className="text-white main-text">
+                    <div className="h2 m-0" style={{fontSize: secSize}}>My name is</div>
+                    <div className="h1" style={{fontSize: mainSize, lineHeight: "60%"}}>Ivan Krokha</div>
                 </div>
 
 
