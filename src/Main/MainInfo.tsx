@@ -29,7 +29,6 @@ const MainInfo: React.FC = () => {
             <div className="d-flex flex-row  align-self-center mx-2" style={{width: size}}>
                 <img style={{width: "30%", height: "30%"}} className="rounded-circle position-relative p-2" src={Avatar}  alt="..."/>
 
-                // TODO: split into separate cards
                 <div className="d-flex flex-column">
                     <div className="text-white main-text">
                         {
