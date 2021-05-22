@@ -11,3 +11,23 @@
 .grecaptcha-badge {
     visibility: hidden;
 }
+
+
+
+.main-item-enter {
+    opacity: 0;
+}
+
+.main-item-enter-active {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+
+.main-item-exit {
+    opacity: 1;
+}
+
+.main-item-exit-active {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+}

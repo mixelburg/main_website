@@ -3,3 +3,38 @@
     font-family: 'NTR', serif;
 }
 
+.my-meter {
+    height: 8px;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+}
+
+.my-meter span {
+    display: block;
+    height: 100%;
+}
+
+.my-progress {
+    border-radius: 1px;
+    background-color: #39C0ED;
+    animation: progressBar 5s ease-in-out;
+    animation-fill-mode:both;
+}
+
+@keyframes progressBar {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+
+.zoom-text {
+
+    animation: zoomText 0.5s ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes zoomText {
+    0% { font-size: 4px; }
+    100% { font-size: 20px; }
+}
