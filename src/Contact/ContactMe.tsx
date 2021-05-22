@@ -69,10 +69,13 @@ const ContactMe: React.FC = () => {
                     "g-recaptcha-response": token
                 })
             }).then(res => res.json()).then(res => {
-                setCurr(res.score > 0.8 ? "loaded" : "bot_error")
-                setFields(defaultState)
+                if (res.score < 0.8)
+                    setCurr("bot_error")
+                else {
 
-                console.log(res)
+                    setCurr("loaded")
+                }
+                setFields(defaultState)
             });
         })
     }

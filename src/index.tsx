@@ -8,11 +8,8 @@ import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-
 ReactDOM.render(
-    <GoogleReCaptchaProvider
-        reCaptchaKey="6LcIBuQaAAAAACKMYsjyLtokAKk_Fao81v5Xi4HY"
-    >
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_RECAPTCHA_KEY}>
         <App/>
     </GoogleReCaptchaProvider>,
   document.getElementById('root')
