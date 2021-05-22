@@ -17,7 +17,7 @@ const MainBody: React.FC = () => {
             <AboutMe/>
 
             <ContactMe/>
-
+            <div style={{height: "500px"}}/>
         </div>
     )
 }
