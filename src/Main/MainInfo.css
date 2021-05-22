@@ -27,14 +27,20 @@
     100% { width: 100%; }
 }
 
-
-.zoom-text {
-
-    animation: zoomText 0.5s ease-in-out;
-    animation-fill-mode: both;
+.my-text-main {
+    animation: myTextMain 1s ease-in-out;
 }
 
-@keyframes zoomText {
-    0% { font-size: 4px; }
-    100% { font-size: 20px; }
+.my-text-secondary {
+    animation: myTextMain 1s ease-in-out;
+    animation-delay: 0.5s;
 }
+
+
+@keyframes myTextMain {
+    0% { font-size: 10%; }
+    100% { font-size: 100%; }
+}
+
+
+
