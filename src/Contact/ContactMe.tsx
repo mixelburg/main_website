@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import TextHR from "../util/TextHR";
 import useWindowSize from "../util/useWindowSize";
+import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
+import ContactMeForm from "./ContactMeForm";
 
 const defaultState = {
     name: "",
@@ -15,20 +17,18 @@ interface IFields {
     [key: string]: string;
 }
 
-const ContactMe = () => {
+const ContactMe: React.FC = () => {
     const windowSize = useWindowSize()
     const size = windowSize.width > 600 ? "50%" : "90%"
+    const mainSize = windowSize.width > 600 ? "400%" : "200%"
+    const secSize = windowSize.width > 600 ? "230%" : "110%"
+
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     const [fields, setFields] = useState<IFields>(defaultState);
     const [errors, setErrors] = useState<IFields>(defaultState);
-
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFields(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+    const [isValid, setIsValid] = useState(false);
+    const [curr, setCurr] = useState<string>("idle");
 
     useEffect(() => {
         setErrors(defaultState)
@@ -41,46 +41,74 @@ const ContactMe = () => {
                 }))
             }
         }
-
     }, [fields])
 
-    const handleSubmit = () => {
+    useEffect(() => {
+        setIsValid(JSON.stringify(errors) === JSON.stringify(defaultState))
+    }, [errors])
 
+    const handleChange = (e: any) => {
+        setCurr("idle")
+        const { name, value } = e.target;
+        setFields(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = () => {
+        setCurr("loading")
+
+        executeRecaptcha?.("contact_me").then(token => {
+            fetch('https://mixelburg.com:5000/verify', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "g-recaptcha-response": token
+                })
+            }).then(res => res.json()).then(res => {
+                setCurr(res.score > 0.8 ? "loaded" : "bot_error")
+                setFields(defaultState)
+
+                console.log(res)
+            });
+        })
     }
 
     return (
         <div className="d-flex flex-column">
             <div className="align-self-center" style={{width: size}}>
                 <TextHR text={"Contact Me"}/>
-                <form style={{width: "75%"}}>
-                    <div className="row row-cols-1 row-cols-md-2 g-4">
-                        <div className="col">
-                            <label className="form-label text-info">name</label>
-                            <input name="name" type="text" className="form-control"
-                                   value={fields.name}
-                                   onChange={handleChange}
-                            />
-                            <div className="form-text text-danger">{errors.name}</div>
-                        </div>
-                        <div className="col">
-                            <label className="form-label text-info">email</label>
-                            <input name="email" type="email" className="form-control"
-                                   value={fields.email}
-                                   onChange={handleChange}
-                            />
-                            <div className="form-text text-danger">{errors.email}</div>
-                        </div>
-                        <div className="col w-100">
-                            <label className="form-label text-info">message</label>
-                            <textarea name="message" className="form-control" rows={4} cols={50}
-                                   value={fields.message}
-                                   onChange={handleChange}
-                            />
-                            <div className="form-text text-danger">{errors.message}</div>
-                        </div>
-                    </div>
-                    <input type="button" value="Submit" className="btn btn-primary m-3" onClick={handleSubmit}/>
-                </form>
+
+                <div className="w-75">
+                    <ContactMeForm fields={fields} errors={errors} handleChange={handleChange}/>
+
+                    {
+                        curr === "loaded"
+                            ? <div className="d-flex flex-column text-white mt-3">
+                                <div className="align-self-center" style={{fontSize: secSize}}>The message has been sent<span className="text-info">!</span></div>
+                                <div className="align-self-center" style={{fontSize: mainSize, lineHeight: "90%"}}>Thank you<span className="text-info">!</span></div>
+                            </div>
+                            : (
+                                isValid &&
+                                (() => {
+                                    switch (curr) {
+                                        case "idle":
+                                            return <input type="button" value="submit          " className="btn btn-primary m-3" onClick={handleSubmit}/>
+                                        case "bot_error":
+                                            return <p className="text-danger">[!] message was not sent, captcha not passed</p>
+                                        case "loading":
+                                            return <button className="btn btn-primary m-3" type="button" disabled>
+                                                <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"/>
+                                                Loading...
+                                            </button>
+                                    }
+                                })()
+                            )
+                    }
+                </div>
             </div>
         </div>
     );

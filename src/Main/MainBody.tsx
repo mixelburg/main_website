@@ -4,7 +4,6 @@ import ProjectGrid from "../Projects/ProjectGrid";
 import AboutMe from "../About/AboutMe";
 import ContactMe from "../Contact/ContactMe";
 
-
 const MainBody: React.FC = () => {
 
     return (

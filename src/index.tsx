@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 
 // simple styling library
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,10 +10,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-
-    <App />
-  </React.StrictMode>,
+    <GoogleReCaptchaProvider
+        reCaptchaKey="6LcIBuQaAAAAACKMYsjyLtokAKk_Fao81v5Xi4HY"
+    >
+        <App/>
+    </GoogleReCaptchaProvider>,
   document.getElementById('root')
 );
 
