@@ -19,6 +19,19 @@ interface IFields {
     [key: string]: string;
 }
 
+const sendMail = async (fields: any) => {
+    const params: any = {
+        from_name: `[contact] ${fields.name}`,
+        email: fields.email,
+        message: fields.message
+    }
+    const template: any = process.env.REACT_APP_EMAILJS_TEMPLATE
+    const userId: any = process.env.REACT_APP_EMAILJS_ID
+
+    return await emailjs.send('gmail', template, params, userId)
+}
+
+
 const ContactMe: React.FC = () => {
     const windowSize = useWindowSize()
     const size = windowSize.width > 600 ? "50%" : "90%"
@@ -74,15 +87,7 @@ const ContactMe: React.FC = () => {
                 if (res.score < 0.8)
                     setCurr("bot_error")
                 else {
-
-                    const params: any = {
-                        from_name: `[contact] ${fields.name}`,
-                        email: fields.email,
-                        message: fields.message
-                    }
-                    const template: any = process.env.REACT_APP_EMAILJS_TEMPLATE
-                    const userId: any = process.env.REACT_APP_EMAILJS_ID
-                    emailjs.send('gmail', template, params, userId).then(res => {
+                    sendMail(fields).then(res => {
                         console.log(res)
                         setCurr("loaded")
                     })
