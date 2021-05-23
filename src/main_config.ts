@@ -1,5 +1,5 @@
 const main_config = {
-    serverAddr: "http://localhost:5000/"
+    serverAddr: "https://mixelburg.com:5000/"
 }
 
 export default main_config
