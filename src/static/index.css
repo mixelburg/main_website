@@ -12,7 +12,6 @@
     visibility: hidden;
 }
 
-
 .main-item-enter {
     opacity: 0;
 }
@@ -34,3 +33,4 @@
 .main-non-select {
     user-select: none;
 }
+
