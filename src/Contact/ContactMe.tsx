@@ -76,23 +76,7 @@ const ContactMe: React.FC = () => {
 
                     console.log("sending mail")
 
-                    fetch(`${main_config.serverAddr}mail`, {
-                        method: 'POST',
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            "name": fields.name,
-                            "mail_reply": fields.email,
-                            "message": fields.message,
-                            "key": process.env.REACT_APP_MAIL_KEY
-                        })
-                    }).then(res => res.json()).then(res => {
-                        console.log(process.env.REACT_APP_MAIL_KEY)
-                        console.log(res)
-                        setCurr("loaded")
-                    })
-
+                    setCurr("loaded")
                 }
                 setFields(defaultState)
             });
