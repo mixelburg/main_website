@@ -88,6 +88,7 @@ const ContactMe: React.FC = () => {
                             "key": process.env.REACT_APP_MAIL_KEY
                         })
                     }).then(res => res.json()).then(res => {
+                        console.log(process.env.REACT_APP_MAIL_KEY)
                         console.log(res)
                         setCurr("loaded")
                     })
