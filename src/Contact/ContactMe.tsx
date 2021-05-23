@@ -49,11 +49,13 @@ const ContactMe: React.FC = () => {
         setErrors(defaultState)
 
         for (const property in fields) {
-            if (fields[property] === "") {
-                setErrors(prevState => ({
-                    ...prevState,
-                    [property]: `cannot be empty`
-                }))
+            if (fields.hasOwnProperty(property)) {
+                if (fields[property] === "") {
+                    setErrors(prevState => ({
+                        ...prevState,
+                        [property]: `cannot be empty`
+                    }))
+                }
             }
         }
     }, [fields])

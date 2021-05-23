@@ -5,8 +5,6 @@ import Background from "./Background/Background";
 import ScrollUp from "./util/ScrollUp";
 
 const App: React.FC = () => {
-
-
     return (
         <>
             <MainNavBar/>

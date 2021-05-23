@@ -4,6 +4,7 @@ import ProjectGrid from "../Projects/ProjectGrid";
 import AboutMe from "../About/AboutMe";
 import ContactMe from "../Contact/ContactMe";
 
+
 const MainBody: React.FC = () => {
 
     return (
@@ -16,7 +17,7 @@ const MainBody: React.FC = () => {
             <AboutMe/>
 
             <ContactMe/>
-            <div style={{height: "500px"}}/>
+            <div style={{height: "100px"}}/>
         </div>
     )
 }
