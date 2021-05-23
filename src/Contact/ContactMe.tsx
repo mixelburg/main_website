@@ -83,7 +83,7 @@ const ContactMe: React.FC = () => {
                     const template: any = process.env.REACT_APP_EMAILJS_TEMPLATE
                     const userId: any = process.env.REACT_APP_EMAILJS_ID
                     emailjs.send('gmail', template, params, userId).then(res => {
-                        console.log("res")
+                        console.log(res)
                         setCurr("loaded")
                     })
                 }
