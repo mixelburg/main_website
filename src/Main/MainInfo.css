@@ -28,19 +28,21 @@
 }
 
 .my-text-main {
-    animation: myTextMain 1s ease-in-out;
+    animation: myTextMain 5s ease-in-out;
 }
 
 .my-text-secondary {
-    animation: myTextMain 1s ease-in-out;
-    animation-delay: 0.5s;
+    animation: myTextMain 5s ease-in-out;
 }
 
 
 @keyframes myTextMain {
-    0% { font-size: 10%; }
-    100% { font-size: 100%; }
+    0% {
+        transform: scale(0.1);
+        transform-origin: top left;
+    }
+    20% { transform: scale(1.0) }
+    80% { opacity: 1 }
+    100% { opacity: 0; }
 }
-
-
 

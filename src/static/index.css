@@ -13,7 +13,6 @@
 }
 
 
-
 .main-item-enter {
     opacity: 0;
 }
@@ -30,4 +29,8 @@
 .main-item-exit-active {
     opacity: 0;
     transition: opacity 200ms ease-in;
+}
+
+.main-non-select {
+    user-select: none;
 }

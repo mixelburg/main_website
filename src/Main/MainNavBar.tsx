@@ -33,7 +33,7 @@ const MainNavBar: React.FC = () => {
         <>
             <div className="d-flex flex-row flex-wrap justify-content-between text-white">
 
-                <pre className="" style={{fontSize: logoSize}}>
+                <pre className="main-non-select" style={{fontSize: logoSize}}>
                     {logo}
                 </pre>
                 <div className="d-flex flex-row">
