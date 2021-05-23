@@ -4,6 +4,7 @@ import useWindowSize from "../util/useWindowSize";
 import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 import ContactMeForm from "./ContactMeForm";
 import main_config from "../main_config";
+import emailjs from 'emailjs-com';
 
 const defaultState = {
     name: "",
@@ -74,9 +75,17 @@ const ContactMe: React.FC = () => {
                     setCurr("bot_error")
                 else {
 
-                    console.log("sending mail")
-
-                    setCurr("loaded")
+                    const params: any = {
+                        from_name: `[contact] ${fields.name}`,
+                        email: fields.email,
+                        message: fields.message
+                    }
+                    const template: any = process.env.REACT_APP_EMAILJS_TEMPLATE
+                    const userId: any = process.env.REACT_APP_EMAILJS_ID
+                    emailjs.send('gmail', template, params, userId).then(res => {
+                        console.log("res")
+                        setCurr("loaded")
+                    })
                 }
                 setFields(defaultState)
             });
