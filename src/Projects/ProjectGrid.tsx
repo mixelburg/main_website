@@ -4,9 +4,10 @@ import IProject from "./IProject"
 import "../static/index.css"
 import useWindowSize from "../util/useWindowSize";
 import TextHR from "../util/TextHR";
+import main_config from "../main_config";
 
 const getProjects = async (): Promise<IProject[] | null> => {
-    const res = await fetch("https://mixelburg.com:5000/projects")
+    const res = await fetch(`${main_config.serverAddr}projects`)
     if (!res.ok) return null;
 
     return await res.json()

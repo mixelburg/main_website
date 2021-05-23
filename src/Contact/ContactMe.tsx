@@ -3,6 +3,7 @@ import TextHR from "../util/TextHR";
 import useWindowSize from "../util/useWindowSize";
 import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 import ContactMeForm from "./ContactMeForm";
+import main_config from "../main_config";
 
 const defaultState = {
     name: "",
@@ -60,7 +61,7 @@ const ContactMe: React.FC = () => {
         setCurr("loading")
 
         executeRecaptcha?.("contact_me").then(token => {
-            fetch('https://mixelburg.com:5000/verify', {
+            fetch(`${main_config.serverAddr}verify`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -73,7 +74,24 @@ const ContactMe: React.FC = () => {
                     setCurr("bot_error")
                 else {
 
-                    setCurr("loaded")
+                    console.log("sending mail")
+
+                    fetch(`${main_config.serverAddr}mail`, {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            "name": fields.name,
+                            "mail_reply": fields.email,
+                            "message": fields.message,
+                            "key": process.env.REACT_APP_MAIL_KEY
+                        })
+                    }).then(res => res.json()).then(res => {
+                        console.log(res)
+                        setCurr("loaded")
+                    })
+
                 }
                 setFields(defaultState)
             });
