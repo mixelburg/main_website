@@ -7,6 +7,26 @@ import "./MainInfo.css"
 import "../../static/index.css"
 import MainInfoText from "./MainInfoText";
 
+
+const info = [
+    {
+        mainText:"Ivan Krokha",
+        secText: "My name is",
+        subText: `I am a full-stack web developer and system administrator who loves coffee.`
+    },
+    {
+        mainText: "Web Developer",
+        secText: "I am a Full-stack",
+        subText: `My main areas of expertise include Typescript, Node.js, React, HTML, CSS and Python.`
+    },
+    {
+        mainText: "System Administrator",
+        secText: "I am also a",
+        subText: `My main areas of expertise include Linux, FreeBSD, Windows, Networking`
+    }
+]
+
+
 const MainInfo: React.FC = () => {
     const windowSize = useWindowSize()
     const size = windowSize.width > 600 ? "70%" : "90%"
@@ -15,36 +35,12 @@ const MainInfo: React.FC = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            setCurr(prevState => ((prevState + 1) % 2))
-        }, 5000)
+            setCurr(prevState => ((prevState + 1) % 3))
+        }, 7000)
 
     }, [curr])
 
-
-    let mainText: string
-    let secText: string
-    let subText: string
-    switch (curr) {
-        case 0:
-            mainText = "Ivan Krokha"
-            secText = "My name is"
-            subText = `
-            I am a full-stack web developer and an enthusiast who loves coffe.
-            `
-            break
-        case 1:
-            mainText = "Web Developer"
-            secText = "I am a Full-stack"
-            subText = `
-            My main areas of expertise include Javascript, Typescript, Node.js, React, HTML, CSS and Python.
-            `
-            break
-        default:
-            mainText = ""
-            secText = ""
-            subText = ""
-            break
-    }
+    const {mainText, secText, subText} = info[curr]
 
     return (
         <div className="d-flex flex-column">
@@ -52,7 +48,7 @@ const MainInfo: React.FC = () => {
                 <div className="col-12 col-sm-4">
                     <img className="rounded-circle position-relative main-non-select w-100 p-2" src={Avatar}  alt="..."/>
                 </div>
-                <div className="col-12 col-sm-6 p-3">
+                <div className="col-12 col-sm-6 p-3 " style={{height: "15rem"}}>
                     <div className="d-flex flex-column">
                         <div className="text-white main-text main-non-select">
                             <MainInfoSign

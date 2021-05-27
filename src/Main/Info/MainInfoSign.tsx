@@ -12,7 +12,7 @@ const MainInfoSign: React.FC<Props> = (props) => {
     return (
         <div>
             <div className="h2 m-0 main-zoom-out" style={{fontSize: secSize}}>{props.secText}</div>
-            <div className="h1 main-zoom-out" style={{fontSize: mainSize, lineHeight: "60%"}}>{props.mainText}</div>
+            <div className="h1 main-zoom-out" style={{fontSize: mainSize, lineHeight: "70%"}}>{props.mainText}</div>
         </div>
     );
 };

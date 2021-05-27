@@ -19,7 +19,7 @@
 .my-progress {
     border-radius: 10px;
     background-color: #39C0ED;
-    animation: progressBar 5s ease-in-out;
+    animation: progressBar 7s ease-in-out;
     animation-fill-mode:both;
 }
 
@@ -29,27 +29,29 @@
 }
 
 .main-zoom-out {
-    animation: mainZoomOut 5s ease-in-out;
+    animation: mainZoomOut 7s ease-in-out;
 }
 
 @keyframes mainZoomOut {
     0% {
-        transform: scale(0.1);
+        transform: scale(0);
         transform-origin: top left;
     }
-    20% { transform: scale(1.0) }
-    90% { opacity: 1 }
+    10% { transform: scale(1.0) }
+    85% { opacity: 1 }
+    95% { opacity: 0 }
     100% { opacity: 0; }
 }
 
 .main-fade-in {
-    animation: mainFadeIn 5s ease-in-out;
+    animation: mainFadeIn 7s;
 }
 
 @keyframes mainFadeIn {
     0% { opacity: 0 }
     10% { opacity: 1 }
-    90% { opacity: 1 }
+    85% { opacity: 1 }
+    95% { opacity: 0 }
     100% { opacity: 0 }
 }
 
