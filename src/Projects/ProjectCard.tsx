@@ -6,8 +6,6 @@ import TextWithDot from "../util/TextWithDot";
 
 
 const ProjectCard: React.FC<IProject> = (props) => {
-    console.log("render card")
-
     const [isOpen, setIsOpen] = React.useState(false);
 
     const photo_url = `https://mixelburg.com:5000/projects/${props._id}/photos/`
