@@ -1,10 +1,13 @@
 import React from "react";
 import ProjectCardModal from "./ProjectCardModal";
 import IProject from "./IProject";
+import TextWithDot from "../util/TextWithDot";
 
 
 
 const ProjectCard: React.FC<IProject> = (props) => {
+    console.log("render card")
+
     const [isOpen, setIsOpen] = React.useState(false);
 
     const photo_url = `https://mixelburg.com:5000/projects/${props._id}/photos/`
@@ -20,11 +23,11 @@ const ProjectCard: React.FC<IProject> = (props) => {
 
     return (
         <div className="col">
-            <article className="card" style={{cursor: "pointer"}} onClick={showModal}>
+            <article className="card" style={{cursor: "pointer", background: "transparent"}} onClick={showModal}>
                 <img src={photo_url + props.showcase_photo} className="card-img-top" alt="..."/>
-                    <div className="card-body p-1">
-                        <div className="card-title h4 mb-1">{props.title}</div>
-                        <div className="card-text h5">{props.short_desc}</div>
+                    <div className="card-body text-white p-1">
+                        <div className="card-title h1 mb-1"><TextWithDot data={props.title}/></div>
+                        <div className="card-text h4" style={{opacity: "60%"}}>{props.short_desc}</div>
                     </div>
             </article>
             <ProjectCardModal data={props} isOpen={isOpen} hideModal={hideModal} photo_url={photo_url}/>
