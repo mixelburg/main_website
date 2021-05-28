@@ -15,28 +15,37 @@ interface Props {
 }
 
 const ContactMeForm: React.FC<Props> = (props) => {
+
+    const nameClass = `form-control ${props.errors.name === "" ? "is-valid" : "is-invalid"}`
+    const emailClass =`form-control ${props.errors.email === "" ? "is-valid" : "is-invalid"}`
+    const msgClass = `form-control ${props.errors.message === "" ? "is-valid" : "is-invalid"}`
+
     return (
         <form>
-            <div className="row row-cols-1 row-cols-md-2 g-4">
-                <div className="col">
+            <div className="row gx-5 gy-2">
+                <div className="col-12 col-md-6" style={{height: "6rem"}}>
                     <label className="form-label text-info">name</label>
-                    <input name="name" type="text" className="form-control"
+                    <input name="name" type="text"
+                           className={nameClass}
                            value={props.fields.name}
                            onChange={props.handleChange}
                     />
                     <div className="form-text text-danger">{props.errors.name}</div>
                 </div>
-                <div className="col">
+                <div className="col-12 col-md-6" style={{height: "6rem"}}>
                     <label className="form-label text-info">email</label>
-                    <input name="email" type="email" className="form-control"
+                    <input name="email" type="email"
+                           className={emailClass}
                            value={props.fields.email}
                            onChange={props.handleChange}
                     />
                     <div className="form-text text-danger">{props.errors.email}</div>
                 </div>
-                <div className="col w-100">
+                <div className="col-12">
                     <label className="form-label text-info">message</label>
-                    <textarea name="message" className="form-control" rows={4} cols={50}
+                    <textarea name="message"
+                              className={msgClass}
+                              rows={4} cols={50}
                               value={props.fields.message}
                               onChange={props.handleChange}
                     />
