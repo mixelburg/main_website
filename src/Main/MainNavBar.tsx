@@ -47,7 +47,7 @@ const MainNavBar: React.FC = () => {
                 </div>
             </div>
 
-            <hr className="text-white my-0" style={{height: "5px", width: windowSize.width}}/>
+            <hr className="text-white my-0" style={{height: "5px"}}/>
         </>
     )
 }

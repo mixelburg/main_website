@@ -29,7 +29,7 @@ const info = [
 
 const MainInfo: React.FC = () => {
     const windowSize = useWindowSize()
-    const size = windowSize.width > 600 ? "70%" : "90%"
+    const size = windowSize.width > 900 ? "70%" : "90%"
 
     const [curr, setCurr] = useState(0)
 
@@ -44,11 +44,11 @@ const MainInfo: React.FC = () => {
 
     return (
         <div className="d-flex flex-column">
-            <div className="row  align-self-center mx-2" style={{width: size}}>
+            <div className="row align-self-center mx-2" style={{width: size}}>
                 <div className="col-12 col-sm-4">
                     <img className="rounded-circle position-relative main-non-select w-100 p-2" src={Avatar}  alt="..."/>
                 </div>
-                <div className="col-12 col-sm-6 p-3 " style={{height: "15rem"}}>
+                <div className="col-12 col-sm-8 p-3 ">
                     <div className="d-flex flex-column">
                         <div className="text-white main-text main-non-select">
                             <MainInfoSign
