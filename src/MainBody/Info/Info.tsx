@@ -6,6 +6,7 @@ import InfoSign from "./InfoSign";
 import "./Info.css"
 import "../../static/index.css"
 import InfoText from "./InfoText";
+import main_config from "../../main_config";
 
 
 const info = [
@@ -29,7 +30,7 @@ const info = [
 
 const Info: React.FC = () => {
     const windowSize = useWindowSize()
-    const size = windowSize.width > 900 ? "70%" : "90%"
+    const size = windowSize.width > main_config.breakPoint ? "70%" : "90%"
 
     const [curr, setCurr] = useState(0)
 
@@ -48,7 +49,7 @@ const Info: React.FC = () => {
                 <div className="col-12 col-sm-4">
                     <img className="rounded-circle position-relative main-non-select w-100 p-2" src={Avatar}  alt="..."/>
                 </div>
-                <div className="col-12 col-sm-8 p-3" style={{maxWidth: ""}}>
+                <div className="col-12 col-sm-8 col-lg-7 col-xl-6 col-xxl-5 p-3">
                     <div className="d-flex flex-column">
                         <div className="text-white main-text main-non-select">
                             <InfoSign
