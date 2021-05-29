@@ -22,7 +22,7 @@ const ScrollUp = () => {
     })
 
     return (
-        <div className="position-fixed bottom-0 end-0 m-4">
+        <div className="position-fixed bottom-0 end-0 m-4 grow">
             <TransitionGroup>
                 {
                     isVisible &&

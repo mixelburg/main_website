@@ -34,5 +34,5 @@
     user-select: none;
 }
 
-
-
+.grow { transition: all .15s ease-in-out; }
+.grow:hover { transform: scale(1.3); }
