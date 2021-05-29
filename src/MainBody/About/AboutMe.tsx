@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import AboutMeCard from "./AboutMeCard";
 import IAboutMe from "./IAboutMe";
-import useWindowSize from "../../util/useWindowSize";
 import TextHR from "../../util/TextHR";
 import main_config from "../../main_config";
 import "./AboutMe.css"
@@ -18,11 +17,7 @@ const getAboutMe = async (): Promise<IAboutMeInfo | null> => {
     return await res.json()
 }
 
-
 const AboutMe: React.FC = () => {
-    const windowSize = useWindowSize()
-    const size = windowSize.width > main_config.breakPoint ? "50%" : "90%"
-
     const [about, setAbout] = useState<IAboutMeInfo | null>(null)
 
     useEffect(() => {
@@ -30,8 +25,8 @@ const AboutMe: React.FC = () => {
     }, [])
 
     return (
-        <div className="d-flex flex-column my-5">
-            <div className="align-self-center" style={{width: size}}>
+        <div className="d-flex flex-column my-5 mx-5">
+            <div className="align-self-center" style={{maxWidth: main_config.maxWidth}}>
                 <TextHR text={"About me"}/>
 
                 <div className="row row-cols-1 row-cols-md-2">
