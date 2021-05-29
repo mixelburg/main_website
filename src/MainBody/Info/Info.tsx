@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import Avatar from "../../static/ava.png"
-import useWindowSize from "../../util/useWindowSize";
 import InfoProgressBarSlider from "./InfoProgressBarSlider";
 import InfoSign from "./InfoSign";
 import "./Info.css"
@@ -29,9 +28,6 @@ const info = [
 
 
 const Info: React.FC = () => {
-    const windowSize = useWindowSize()
-    const size = windowSize.width > main_config.breakPoint ? "70%" : "90%"
-
     const [curr, setCurr] = useState(0)
 
     useEffect(() => {
@@ -45,11 +41,11 @@ const Info: React.FC = () => {
 
     return (
         <div className="d-flex flex-column">
-            <div className="row align-self-center" style={{width: size}}>
+            <div className="row align-self-center mx-5" style={{maxWidth: main_config.maxWidthL}}>
                 <div className="col-12 col-sm-4">
                     <img className="rounded-circle position-relative main-non-select w-100 p-2" src={Avatar}  alt="..."/>
                 </div>
-                <div className="col-12 col-sm-8 col-lg-7 col-xl-6 col-xxl-5 p-3">
+                <div className="col-12 col-sm-8 col-md-7 col-lg-6 p-3">
                     <div className="d-flex flex-column">
                         <div className="text-white main-text main-non-select">
                             <InfoSign

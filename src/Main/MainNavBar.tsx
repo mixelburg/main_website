@@ -26,8 +26,8 @@ const linkSettings = {
 
 const MainNavBar: React.FC = () => {
     const windowSize = useWindowSize()
-    const svgSize = windowSize.width > 600 ? windowSize.width * 0.04 : windowSize.width * 0.08
-    const logoSize = windowSize.width > 600 ? windowSize.width * 0.012 : windowSize.width * 0.02
+    const svgSize = windowSize.width > 600 ? windowSize.width * 0.03 : windowSize.width * 0.08
+    const logoSize = windowSize.width > 600 ? windowSize.width * 0.01 : windowSize.width * 0.02
 
     return (
         <>
