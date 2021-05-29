@@ -1,7 +1,7 @@
 import React from 'react';
-import "./MainInfo.css"
+import "./Info.css"
 
-const ProgressBarSlider = () => {
+const InfoProgressBarSlider = () => {
     return (
         <div className="my-meter">
             <span><span className="my-progress"/></span>
@@ -9,4 +9,4 @@ const ProgressBarSlider = () => {
     );
 };
 
-export default ProgressBarSlider;
+export default InfoProgressBarSlider;

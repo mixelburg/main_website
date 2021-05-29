@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import Avatar from "../../static/ava.png"
 import useWindowSize from "../../util/useWindowSize";
-import ProgressBarSlider from "./ProgressBarSlider";
-import MainInfoSign from "./MainInfoSign";
-import "./MainInfo.css"
+import InfoProgressBarSlider from "./InfoProgressBarSlider";
+import InfoSign from "./InfoSign";
+import "./Info.css"
 import "../../static/index.css"
-import MainInfoText from "./MainInfoText";
+import InfoText from "./InfoText";
 
 
 const info = [
@@ -27,7 +27,7 @@ const info = [
 ]
 
 
-const MainInfo: React.FC = () => {
+const Info: React.FC = () => {
     const windowSize = useWindowSize()
     const size = windowSize.width > 900 ? "70%" : "90%"
 
@@ -51,13 +51,13 @@ const MainInfo: React.FC = () => {
                 <div className="col-12 col-sm-8 p-3 ">
                     <div className="d-flex flex-column">
                         <div className="text-white main-text main-non-select">
-                            <MainInfoSign
+                            <InfoSign
                                 mainText={mainText} secText={secText} key={curr}
                             />
                         </div>
-                        <ProgressBarSlider key={curr}/>
+                        <InfoProgressBarSlider key={curr}/>
                         <div className="text-white main-text mt-3">
-                            <MainInfoText text={subText} key={curr}/>
+                            <InfoText text={subText} key={curr}/>
                         </div>
                     </div>
                 </div>
@@ -67,4 +67,4 @@ const MainInfo: React.FC = () => {
 
 }
 
-export default MainInfo
+export default Info

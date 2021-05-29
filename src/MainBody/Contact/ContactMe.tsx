@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import TextHR from "../util/TextHR";
-import useWindowSize from "../util/useWindowSize";
+import TextHR from "../../util/TextHR";
+import useWindowSize from "../../util/useWindowSize";
 import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 import ContactMeForm from "./ContactMeForm";
-import main_config from "../main_config";
+import main_config from "../../main_config";
 import emailjs from 'emailjs-com';
 
 const defaultState = {

@@ -5,7 +5,7 @@ interface Props {
     mainText: string;
     secText: string
 }
-const MainInfoSign: React.FC<Props> = (props) => {
+const InfoSign: React.FC<Props> = (props) => {
     const windowSize = useWindowSize()
     const secSize = windowSize.width > 600 ? "300%" : "200%"
     const mainSize = windowSize.width > 600 ? "440%" : "280%"
@@ -17,4 +17,4 @@ const MainInfoSign: React.FC<Props> = (props) => {
     );
 };
 
-export default MainInfoSign;
+export default InfoSign;

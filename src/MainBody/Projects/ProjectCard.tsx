@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCardModal from "./ProjectCardModal";
 import IProject from "./IProject";
-import TextWithDot from "../util/TextWithDot";
+import TextWithDot from "../../util/TextWithDot";
 
 
 

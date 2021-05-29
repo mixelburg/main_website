@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import AboutMeCard from "./AboutMeCard";
 import IAboutMe from "./IAboutMe";
-import useWindowSize from "../util/useWindowSize";
-import TextHR from "../util/TextHR";
-import main_config from "../main_config";
+import useWindowSize from "../../util/useWindowSize";
+import TextHR from "../../util/TextHR";
+import main_config from "../../main_config";
 import "./AboutMe.css"
 
 interface IAboutMeInfo {

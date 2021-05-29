@@ -20,8 +20,8 @@ const ContactMeForm: React.FC<Props> = (props) => {
     return (
         <div>
             <form>
-                <div className="row gx-5 gy-2">
-                    <div className="col-12 col-md-6" style={{height: "6rem"}}>
+                <div className="row gx-5 gy-3">
+                    <div className="col-12 col-md-6" style={{height: "5rem"}}>
                         <div className="field text-info">
                             <input className="bg-transparent text-white" type="text"
                                    name="name" id="fullname"
@@ -33,7 +33,7 @@ const ContactMeForm: React.FC<Props> = (props) => {
                         </div>
                         <div className="form-text text-danger">{props.errors.name}</div>
                     </div>
-                    <div className="col-12 col-md-6" style={{height: "6rem"}}>
+                    <div className="col-12 col-md-6" style={{height: "5rem"}}>
                         <div className="field text-info">
                             <input className="bg-transparent text-white" type="email"
                                    name="email" id="email"
