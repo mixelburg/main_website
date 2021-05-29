@@ -1,10 +1,10 @@
-ul.list-with-line li {
+ul.list-with-line > div {
     position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
     margin-bottom: 0; /* This overrides previously specified margin-bottom */
     padding-bottom: 2em;
 }
 
-ul.list-with-line li:after {
+ul.list-with-line > div:after {
     /* bullets */
     content: url('20px-BLueDisc.svg.png');
     position: absolute;
@@ -12,7 +12,7 @@ ul.list-with-line li:after {
     top: 0;
 }
 
-ul.list-with-line li:before {
+ul.list-with-line > div:before {
     /* lines */
     content:"";
     position: absolute;
@@ -22,12 +22,12 @@ ul.list-with-line li:before {
     width: 1px;
 }
 
-ul.list-with-line li:first-child:before {
+ul.list-with-line > div:first-child:before {
     /* first li's line */
     top: 8px; /* moves the line down so that it disappears under the bullet*/
 }
 
-ul.list-with-line li:last-child:before {
+ul.list-with-line > div:last-child:before {
     /* last li's line */
     height: 6px; /* shorten the line so it goes only up to the bullet*/
 }

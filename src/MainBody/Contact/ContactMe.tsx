@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import TextHR from "../../util/TextHR";
-import useWindowSize from "../../util/useWindowSize";
 import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 import ContactMeForm from "./ContactMeForm";
 import main_config from "../../main_config";
@@ -33,11 +32,6 @@ const sendMail = async (fields: any) => {
 
 
 const ContactMe: React.FC = () => {
-    const windowSize = useWindowSize()
-    const size = windowSize.width > main_config.breakPoint ? "50%" : "90%"
-    const mainSize = windowSize.width > main_config.breakPoint ? "400%" : "200%"
-    const secSize = windowSize.width > main_config.breakPoint ? "230%" : "110%"
-
     const { executeRecaptcha } = useGoogleReCaptcha();
 
     const [fields, setFields] = useState<IFields>(defaultState);
@@ -100,8 +94,8 @@ const ContactMe: React.FC = () => {
     }
 
     return (
-        <div className="d-flex flex-column">
-            <div className="align-self-center" style={{width: size}}>
+        <div className="d-flex flex-column mx-5">
+            <div className="align-self-center w-100" style={{maxWidth: main_config.maxWidth}}>
                 <TextHR text={"Contact Me"}/>
 
                 <div className="w-75">
@@ -110,8 +104,8 @@ const ContactMe: React.FC = () => {
                     {
                         curr === "loaded"
                             ? <div className="d-flex flex-column text-white mt-3">
-                                <div className="align-self-center" style={{fontSize: secSize}}>The message has been sent<span className="text-info">!</span></div>
-                                <div className="align-self-center" style={{fontSize: mainSize, lineHeight: "90%"}}>Thank you<span className="text-info">!</span></div>
+                                <div className="align-self-center h2" >The message has been sent<span className="text-info">!</span></div>
+                                <div className="align-self-center h1" style={{lineHeight: "90%"}}>Thank you<span className="text-info">!</span></div>
                             </div>
                             : (
                                 isValid &&

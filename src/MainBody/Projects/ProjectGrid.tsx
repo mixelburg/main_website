@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import ProjectCard from "./ProjectCard";
 import IProject from "./IProject"
 import "../../static/index.css"
-import useWindowSize from "../../util/useWindowSize";
 import TextHR from "../../util/TextHR";
 import main_config from "../../main_config";
 
@@ -15,16 +14,14 @@ const getProjects = async (): Promise<IProject[] | null> => {
 
 const ProjectGrid: React.FC = () => {
     const [projects, setProjects] = useState<IProject[] | null>(null)
-    const windowSize = useWindowSize()
-    const size = windowSize.width > main_config.breakPoint ? "50%" : "90%"
 
     useEffect(() => {
         getProjects().then(data => setProjects(data))
     }, [])
 
     return (
-        <div className="d-flex flex-column mt-3">
-            <div className="align-self-center" style={{width: size}}>
+        <div className="d-flex flex-column mt-3 mx-5">
+            <div className="align-self-center" style={{maxWidth: main_config.maxWidth}}>
 
                 <TextHR text={"Projects"}/>
 
