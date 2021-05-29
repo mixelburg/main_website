@@ -34,9 +34,9 @@ const sendMail = async (fields: any) => {
 
 const ContactMe: React.FC = () => {
     const windowSize = useWindowSize()
-    const size = windowSize.width > 600 ? "50%" : "90%"
-    const mainSize = windowSize.width > 600 ? "400%" : "200%"
-    const secSize = windowSize.width > 600 ? "230%" : "110%"
+    const size = windowSize.width > main_config.breakPoint ? "50%" : "90%"
+    const mainSize = windowSize.width > main_config.breakPoint ? "400%" : "200%"
+    const secSize = windowSize.width > main_config.breakPoint ? "230%" : "110%"
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 

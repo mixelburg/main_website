@@ -16,7 +16,7 @@ const getProjects = async (): Promise<IProject[] | null> => {
 const ProjectGrid: React.FC = () => {
     const [projects, setProjects] = useState<IProject[] | null>(null)
     const windowSize = useWindowSize()
-    const size = windowSize.width > 600 ? "50%" : "90%"
+    const size = windowSize.width > main_config.breakPoint ? "50%" : "90%"
 
     useEffect(() => {
         getProjects().then(data => setProjects(data))

@@ -21,7 +21,7 @@ const getAboutMe = async (): Promise<IAboutMeInfo | null> => {
 
 const AboutMe: React.FC = () => {
     const windowSize = useWindowSize()
-    const size = windowSize.width > 600 ? "50%" : "90%"
+    const size = windowSize.width > main_config.breakPoint ? "50%" : "90%"
 
     const [about, setAbout] = useState<IAboutMeInfo | null>(null)
 

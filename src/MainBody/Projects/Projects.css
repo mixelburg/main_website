@@ -1,0 +1,14 @@
+.my-card #CardImg {
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.my-card:hover #CardImg {
+    top: -10px;
+}
+
+.my-card:hover #CardTitle {
+    color: #39C0ED;
+
+}

@@ -44,11 +44,11 @@ const Info: React.FC = () => {
 
     return (
         <div className="d-flex flex-column">
-            <div className="row align-self-center mx-2" style={{width: size}}>
+            <div className="row align-self-center" style={{width: size}}>
                 <div className="col-12 col-sm-4">
                     <img className="rounded-circle position-relative main-non-select w-100 p-2" src={Avatar}  alt="..."/>
                 </div>
-                <div className="col-12 col-sm-8 p-3 ">
+                <div className="col-12 col-sm-8 p-3" style={{maxWidth: ""}}>
                     <div className="d-flex flex-column">
                         <div className="text-white main-text main-non-select">
                             <InfoSign

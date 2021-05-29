@@ -1,5 +1,6 @@
 const main_config = {
-    serverAddr: "https://mixelburg.com:5000/"
+    serverAddr: "https://mixelburg.com:5000/",
+    breakPoint: 1100,
 }
 
 
