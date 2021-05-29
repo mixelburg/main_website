@@ -59,11 +59,6 @@ const ContactMeForm: React.FC<Props> = (props) => {
                         <div className="form-text text-danger">{props.errors.message}</div>
                     </div>
                 </div>
-                <div className="form-text h6 text-secondary" style={{fontSize: "70%"}}>
-                    This site is protected by reCAPTCHA and the Google
-                    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-                    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-                </div>
             </form>
 
         </div>

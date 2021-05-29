@@ -9,7 +9,6 @@ const MainBody: React.FC = () => {
 
     return (
         <div className="my-3">
-
             <Info/>
 
             <ProjectGrid/>
@@ -17,8 +16,6 @@ const MainBody: React.FC = () => {
             <AboutMe/>
 
             <ContactMe/>
-
-
         </div>
     )
 }
