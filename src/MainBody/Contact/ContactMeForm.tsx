@@ -45,7 +45,7 @@ const ContactMeForm: React.FC<Props> = (props) => {
                         </div>
                         <div className="form-text text-danger">{props.errors.email}</div>
                     </div>
-                    <div className="col-12" style={{height: "8rem"}}>
+                    <div className="col-12" style={{}}>
                         <div className="field text-info">
                             <textarea name="message" id="message"
                                       style={{resize: "none"}}
