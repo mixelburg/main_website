@@ -112,11 +112,13 @@ const ContactMe: React.FC = () => {
                                 (() => {
                                     switch (curr) {
                                         case "idle":
-                                            return <input type="button" value="submit          " className="btn btn-primary m-3" onClick={handleSubmit}/>
+                                            return <input type="button" value="submit"
+                                                          className="btn btn-info rounded-pill m-3" style={{width: "120px"}}
+                                                          onClick={handleSubmit}/>
                                         case "bot_error":
                                             return <p className="text-danger">[!] message was not sent, captcha not passed</p>
                                         case "loading":
-                                            return <button className="btn btn-primary m-3" type="button" disabled>
+                                            return <button className="btn btn-info rounded-pill m-3" type="button" style={{width: "120px"}} disabled>
                                                 <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"/>
                                                 Loading...
                                             </button>
