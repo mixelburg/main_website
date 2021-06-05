@@ -11,7 +11,11 @@ interface IProps {
 const ProjectImageGallery: React.FC<IProps> = (props) => {
     const cards = props.photos.map(photo => (
         <div className="d-flex flex-row justify-content-center w-100 h-100" key={photo}>
-            <img src={props.url + photo} style={{height: "100%"}} alt="..."/>
+            <img
+                src={props.url + photo}
+                style={{height: "100%"}}
+                alt="..."
+            />
         </div>
     ))
     return (

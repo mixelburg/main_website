@@ -48,7 +48,7 @@ const ProjectCardModal: React.FC<Props> = (props) => {
 
                     <img
                         src={props.photo_url + props.data.main_photo}
-                        className="card-img-top"
+                        className="card-img-top img-shadow"
                         style={{width: "70%", height: "70%"}}
                         alt="..."/>
                     </div>
