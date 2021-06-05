@@ -3,12 +3,12 @@ import ProjectCardModal from "./ProjectCardModal";
 import IProject from "./IProject";
 import TextWithDot from "../../util/TextWithDot";
 import "./Projects.css"
-
+import main_config from "../../main_config";
 
 const ProjectCard: React.FC<IProject> = (props) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
-    const photo_url = `https://mixelburg.com:5000/projects/${props._id}/photos/`
+    const photo_url = `${main_config.serverAddr}projects/${props._id}/photos/`
 
     // modal controls
     const showModal = () => {

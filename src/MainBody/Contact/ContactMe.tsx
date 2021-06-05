@@ -98,9 +98,8 @@ const ContactMe: React.FC = () => {
             <div className="align-self-center w-100" style={{maxWidth: main_config.maxWidth}}>
                 <TextHR text={"Contact Me"}/>
 
-                <div className="w-75">
+                <div className="w-75" style={{}}>
                     <ContactMeForm fields={fields} errors={errors} handleChange={handleChange}/>
-
                     {
                         curr === "loaded"
                             ? <div className="d-flex flex-column text-white mt-3">
@@ -108,12 +107,13 @@ const ContactMe: React.FC = () => {
                                 <div className="align-self-center h1" style={{lineHeight: "90%"}}>Thank you<span className="text-info">!</span></div>
                             </div>
                             : (
-                                isValid &&
-                                (() => {
+                                () => {
                                     switch (curr) {
                                         case "idle":
+                                            const css = "btn btn-info rounded-pill m-3 " + (!isValid ? "disabled" : "")
                                             return <input type="button" value="submit"
-                                                          className="btn btn-info rounded-pill m-3" style={{width: "120px"}}
+                                                          className={css}
+                                                          style={{width: "120px"}}
                                                           onClick={handleSubmit}/>
                                         case "bot_error":
                                             return <p className="text-danger">[!] message was not sent, captcha not passed</p>
@@ -123,8 +123,8 @@ const ContactMe: React.FC = () => {
                                                 Loading...
                                             </button>
                                     }
-                                })()
-                            )
+                                }
+                            )()
                     }
                 </div>
             </div>
