@@ -20,7 +20,7 @@ const ContactMeForm: React.FC<Props> = (props) => {
     return (
         <div>
             <form>
-                <div className="row gx-5 gy-3 mb-3">
+                <div className="row gx-5 gy-3 mb-4 bg-danger">
                     <div className="col-12 col-md-6" style={{height: "5rem"}}>
                         <div className="field text-info">
                             <input className="bg-transparent text-white" type="text"

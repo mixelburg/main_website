@@ -115,7 +115,7 @@ const ContactMe: React.FC = () => {
                                 () => {
                                     switch (curr) {
                                         case "idle":
-                                            const css = "btn btn-info rounded-pill m-3 " + (!isValid ? "disabled" : "")
+                                            const css = "btn btn-info rounded-pill " + (!isValid ? "disabled" : "")
                                             return <input type="button" value="submit"
                                                           className={css}
                                                           style={{width: "120px"}}
@@ -123,7 +123,7 @@ const ContactMe: React.FC = () => {
                                         case "bot_error":
                                             return <p className="text-danger">[!] message was not sent, captcha not passed</p>
                                         case "loading":
-                                            return <button className="btn btn-info rounded-pill m-3" type="button" style={{width: "120px"}} disabled>
+                                            return <button className="btn btn-info rounded-pill" type="button" style={{width: "120px"}} disabled>
                                                 <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"/>
                                                 Loading...
                                             </button>
