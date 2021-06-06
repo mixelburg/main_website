@@ -3,7 +3,6 @@ import TextHR from "../../util/TextHR";
 import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 import ContactMeForm from "./ContactMeForm";
 import main_config from "../../main_config";
-import emailjs from 'emailjs-com';
 
 const defaultState = {
     name: "",
@@ -20,14 +19,20 @@ interface IFields {
 
 const sendMail = async (fields: any) => {
     const params: any = {
-        from_name: `[contact] ${fields.name}`,
+        from_name: fields.name,
         email: fields.email,
-        message: fields.message
+        message: fields.message,
+        key: process.env.REACT_APP_MAIL_KEY
     }
-    const template: any = process.env.REACT_APP_EMAILJS_TEMPLATE
-    const userId: any = process.env.REACT_APP_EMAILJS_ID
 
-    return await emailjs.send('gmail', template, params, userId)
+    const res = await fetch(`${main_config.serverAddr}mail`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(params)
+    })
+    return await res.json()
 }
 
 

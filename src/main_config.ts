@@ -4,5 +4,4 @@ const main_config = {
     maxWidthL: "1300px"
 }
 
-
 export default main_config
