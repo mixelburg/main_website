@@ -24,18 +24,8 @@ const ProjectCardModal: React.FC<Props> = (props) => {
             <div className="modal-content">
                 <div className="modal-header">
                     <div className="modal-title">
-                        <div className="d-flex flex-row">
-                            <div>
-                                <div className="h4">{props.data.title}</div>
-                                <div>{props.data.short_desc}</div>
-                            </div>
-                            {
-                                props.data.github_link &&
-                                <a href={props.data.github_link} {...linkSettings}>
-                                    <Github size={50} className="ms-2"/>
-                                </a>
-                            }
-                        </div>
+                        <div className="h4">{props.data.title}</div>
+                        <div>{props.data.short_desc}</div>
                     </div>
                     <button
                         type="button"
@@ -45,13 +35,22 @@ const ProjectCardModal: React.FC<Props> = (props) => {
                 </div>
                 <div className="modal-body">
                     <div className="d-flex flex-row justify-content-center">
-
                     <img
                         src={props.photo_url + props.data.main_photo}
                         className="card-img-top img-shadow"
                         style={{width: "70%", height: "70%"}}
                         alt="..."/>
                     </div>
+
+                    <div className="d-flex flex-row mt-4">
+                        <div className="d-flex flex-column justify-content-center me-2">
+                            <div className="fs-3">link: </div>
+                        </div>
+                        <a href={props.data.github_link} {...linkSettings}>
+                            <Github size={50}/>
+                        </a>
+                    </div>
+
                     <p className="mt-3">
                         {props.data.full_desc}
                     </p>
