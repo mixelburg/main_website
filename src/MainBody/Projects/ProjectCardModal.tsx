@@ -42,14 +42,17 @@ const ProjectCardModal: React.FC<Props> = (props) => {
                         alt="..."/>
                     </div>
 
-                    <div className="d-flex flex-row mt-4">
-                        <div className="d-flex flex-column justify-content-center me-2">
-                            <div className="fs-3">link: </div>
+                    {
+                        'github_link' in props.data &&
+                        <div className="d-flex flex-row mt-4">
+                            <div className="d-flex flex-column justify-content-center me-2">
+                                <div className="fs-3">link: </div>
+                            </div>
+                            <a href={props.data.github_link} {...linkSettings}>
+                                <Github size={50}/>
+                            </a>
                         </div>
-                        <a href={props.data.github_link} {...linkSettings}>
-                            <Github size={50}/>
-                        </a>
-                    </div>
+                    }
 
                     <p className="mt-3">
                         {props.data.full_desc}
