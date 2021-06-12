@@ -6,26 +6,10 @@ import "./Info.css"
 import "../../static/index.css"
 import InfoText from "./InfoText";
 import main_config from "../../main_config";
+import infoTextConfig from "./infoTextConfig";
 
 
-const info = [
-    {
-        mainText:"Ivan Krokha",
-        secText: "My name is",
-        subText: `I am a full-stack web developer and system administrator who loves coffee.`
-    },
-    {
-        mainText: "Web Developer",
-        secText: "I am a Full-stack",
-        subText: `My main areas of expertise include Typescript, Node.js, React, HTML, CSS and Python.`
-    },
-    {
-        mainText: "System Administrator",
-        secText: "I am also a",
-        subText: `My main areas of expertise include Linux, FreeBSD, Windows, Networking`
-    }
-]
-
+const info = infoTextConfig
 
 const Info: React.FC = () => {
     const [curr, setCurr] = useState(0)
