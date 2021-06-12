@@ -1,7 +1,6 @@
 .main-text {
     overflow: hidden;
-    /*font-family: 'NTR', serif;*/
-    font-family: Helvetica, sans-serif;
+    font-family: 'NTR', serif;
 }
 
 .my-meter {
