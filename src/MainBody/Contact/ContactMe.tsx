@@ -85,8 +85,10 @@ const ContactMe: React.FC = () => {
                     "g-recaptcha-response": token
                 })
             }).then(res => res.json()).then(res => {
-                if (res.score < 0.8)
+                console.log(`captcha score: ${res.score}`)
+                if (res.score < 0.8){
                     setCurr("bot_error")
+                }
                 else {
                     sendMail(fields).then(res => {
                         console.log(res)
