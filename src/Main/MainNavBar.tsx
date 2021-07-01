@@ -1,5 +1,5 @@
 import React from "react";
-import {Instagram, Envelope, Whatsapp} from "react-bootstrap-icons";
+import { Instagram, Envelope, Whatsapp } from "react-bootstrap-icons";
 import useWindowSize from "../util/useWindowSize";
 
 const openGmail = () => {
@@ -33,11 +33,11 @@ const MainNavBar: React.FC = () => {
         <>
             <div className="d-flex flex-row flex-wrap justify-content-between text-white">
 
-                <pre className="main-non-select" style={{fontSize: logoSize}}>
+                <pre className="main-non-select" style={{ fontSize: logoSize }}>
                     {logo}
                 </pre>
                 <div className="d-flex flex-row">
-                    <Envelope size={svgSize} className="align-self-center me-3" onClick={openGmail}/>
+                    <Envelope size={svgSize} className="align-self-center me-3" onClick={openGmail} />
                     <a href="https://www.instagram.com/an0nym0us_rac00n/"  {...linkSettings}>
                         <Instagram size={svgSize} />
                     </a>
@@ -47,7 +47,8 @@ const MainNavBar: React.FC = () => {
                 </div>
             </div>
 
-            <hr className="text-white my-0" style={{height: "5px"}}/>
+
+            <hr className="text-white my-0" style={{ height: "5px" }} />
         </>
     )
 }
