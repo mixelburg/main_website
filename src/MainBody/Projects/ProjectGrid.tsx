@@ -4,6 +4,7 @@ import IProject from "./IProject"
 import "../../static/index.css"
 import TextHR from "../../util/TextHR";
 import main_config from "../../main_config";
+import FadeInSection from "../../util/FadeIn/FadeInSection";
 
 const getProjects = async (): Promise<IProject[] | null> => {
     const res = await fetch(`${main_config.serverAddr}projects`)
@@ -27,7 +28,9 @@ const ProjectGrid: React.FC = () => {
 
                 <div className="row row-cols-1 row-cols-sm-2 g-4">
                     {
-                        projects ? projects.map(project => <ProjectCard {...project} key={project._id}/>)
+                        projects ? projects.map(project => <FadeInSection key={project._id}>
+                                <ProjectCard {...project}/>
+                        </FadeInSection>)
                             : <h3>[!] error loading data from server</h3>
                     }
                 </div>

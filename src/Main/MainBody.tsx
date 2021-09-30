@@ -3,6 +3,7 @@ import Info from "../MainBody/Info/Info";
 import ProjectGrid from "../MainBody/Projects/ProjectGrid";
 import AboutMe from "../MainBody/About/AboutMe";
 import ContactMe from "../MainBody/Contact/ContactMe";
+import FadeInSection from "../util/FadeIn/FadeInSection";
 
 
 const MainBody: React.FC = () => {
@@ -11,11 +12,17 @@ const MainBody: React.FC = () => {
         <div className="my-3">
             <Info/>
 
-            <ProjectGrid/>
+            <FadeInSection>
+                <ProjectGrid/>
+            </FadeInSection>
 
-            <AboutMe/>
+            <FadeInSection>
+                <AboutMe/>
+            </FadeInSection>
 
-            <ContactMe/>
+            <FadeInSection>
+                <ContactMe/>
+            </FadeInSection>
         </div>
     )
 }
