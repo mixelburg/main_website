@@ -31,7 +31,7 @@ const Info: React.FC = () => {
                 </div>
                 <div className="col-12 col-sm-8 col-md-7 col-lg-6 p-3">
                     <div className="d-flex flex-column">
-                        <div className="text-white main-text main-non-select">
+                        <div className="text-white main-text main-non-select" id="aboutme">
                             <InfoSign
                                 mainText={mainText} secText={secText} key={curr}
                             />
